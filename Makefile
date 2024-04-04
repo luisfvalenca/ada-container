@@ -1,7 +1,7 @@
 build:
-	echo "Building App"
-	docker build -t container-image .
+	echo "Building App ..."
+	docker compose build
 
 run:
-	echo "Running App"
-	docker run --rm --name container-name container-image main.py ${ARGS}
+	echo "Running App ..."
+	docker compose up
