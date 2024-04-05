@@ -4,4 +4,4 @@ build:
 
 run:
 	echo "Running App ..."
-	docker compose up
+	docker compose up --build

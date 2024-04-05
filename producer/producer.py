@@ -4,7 +4,7 @@ import pika
 import os
 import time
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host="localhost", port=5672, virtual_host="/"))
+connection = pika.BlockingConnection(pika.ConnectionParameters(host="rabbitmq", port=5672, virtual_host="/", credentials=pika.PlainCredentials("admin","admin")))
 
 channel = connection.channel()
 
@@ -22,6 +22,6 @@ for transaction in transactions:
     channel.basic_publish(exchange="amq.fanout", routing_key="", body=json.dumps(transaction), properties=properties)
     print(f"[x] Sent '{json.dumps(transaction)}'")
 
-    time.sleep(5)
+    time.sleep(2)
 
 channel.close()
