@@ -16,6 +16,8 @@ transactions = json.load(trasactions_file)
 
 trasactions_file.close()
 
+time.sleep(5)
+
 for transaction in transactions:
     transaction["data"] = str(datetime.datetime.now())
 

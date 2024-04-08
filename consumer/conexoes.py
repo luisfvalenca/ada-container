@@ -11,4 +11,4 @@ def connect_redis():
     return redis.Redis(host='redis', port=6379, db=0)
 
 def connect_minio():
-    return Minio(endpoint="minio:9000", access_key="admin", secret_key="admin", secure=False)
+    return Minio(endpoint="minio:9000", access_key="minioadmin", secret_key="minioadmin", secure=False)
